@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlock Content</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        input { padding: 10px; font-size: 16px; }
+        button { padding: 10px; font-size: 16px; background: green; color: white; border: none; cursor: pointer; }
+        #result { margin-top: 20px; font-size: 18px; }
+    </style>
+    <script>
+        function checkCode() {
+            var inputCode = document.getElementById("codeInput").value;
+            var codes = {
+                "asd": "https://yourlink1.com",
+                "xyz": "https://yourlink2.com",
+                "123": "https://yourlink3.com"
+            };
+
+            if (codes[inputCode]) {
+                document.getElementById("result").innerHTML = `
+                    <h3>আপনার কন্টেন্ট:</h3>
+                    <a href="${codes[inputCode]}" target="_blank">এখানে ক্লিক করুন</a>
+                `;
+            } else {
+                document.getElementById("result").innerHTML = "<p style='color:red;'>ভুল কোড! দয়া করে সঠিক কোড দিন।</p>";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>azim:</h2>
+    <input type="text" id="codeInput" placeholder="এখানে কোড লিখুন">
+    <button onclick="checkCode()">Unlock</button>
+    <div id="result"></div>
+</body>
+</html>
